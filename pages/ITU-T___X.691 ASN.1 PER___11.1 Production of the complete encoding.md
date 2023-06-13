@@ -1,0 +1,22 @@
+- ### 11.1.1
+	- If an ASN.1 type is encoded using any of the encoding rules identified by the object identifiers listed in 
+	  subclause 33.2 (or by direct textual reference to this Recommendation | International Standard), and the encoding is included in:
+		- a) an ASN.1 octetstring; or
+		- b) an ASN.1 open type; or
+		- c) any part of an ASN.1 external or embedded pdv type; or
+		- d) any carrier protocol that is not defined using ASN.1
+	- then that ASN.1 type is defined as an outermost type for this application, and subclause 11.1.2 shall apply to all encodings of its values.
+		- NOTE 1  – This means that all complete PER encodings (for all variants) that are used in this way are always an integral multiple of eight bits.
+		- NOTE 2  – It is possible using the Encoding Control Notation (see Recommendation ITU-T X.692 | ISO/IEC 8825-3) to specify a variant of PER encodings in which the encoding is not padded to an octet boundary as specified in 11.1.2. Many tools support this 
+		  option.
+		- NOTE 3 – It is recognized that a carrier protocol not defined using ASN.1 need not explicitly carry the additional zero bits for padding (specified in 11.1.2), but can imply their presence.
+- ### 11.1.2
+	- The field-list produced as a result of applying this Recommendation | International Standard to an abstract value of an outermost type shall be used to produce the complete encoding of that abstract syntax value as follows: each field in the field-list shall be taken in turn and concatenated to the end of the bit string which is to form the complete encoding of the abstract syntax value preceded by additional zero bits for padding as specified below.
+- ### 11.1.3
+	- In the UNALIGNED variant of these encoding rules, all fields shall be concatenated without padding. If the result of encoding the outermost value is an empty bit string, the bit string shall be replaced with a single octet with all bits set to 0. If it is a non-empty bit string and it is not a multiple of eight bits, (one to seven) zero bits shall be appended to it to produce a multiple of eight bits.
+- ### 11.1.4
+	- In the ALIGNED variant of these encoding rules, any bit-fields in the field-list shall be concatenated without padding, and any octet-aligned bit-fields shall be concatenated after (zero to seven) zero bits have been concatenated to make the length of the encoding produced so far a multiple of eight bits. If the result of encoding the outermost value is an empty bit string, the bit string shall be replaced with a single octet with all bits set to 0. If it is a non-empty bit string and it is not a multiple of eight bits, (zero to seven) zero bits shall be appended to it to produce a multiple of eight bits.
+		- NOTE 1 – The encoding of the outermost value is the empty bit string if, for example, the abstract syntax value is of the null type or of an integer type constrained to a single value.
+		- NOTE 2 – Zero-length octet-aligned bit-fields can never be present in the field-list (see 11.9.3.3).
+- ### 11.1.5
+	- The resulting bit string is the complete encoding of the abstract syntax value of an outermost type.
