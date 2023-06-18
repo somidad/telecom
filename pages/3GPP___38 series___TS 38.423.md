@@ -1,3 +1,4 @@
+alias:: 🏷 NG-RAN; XnAP
 repository:: https://portal.3gpp.org/desktopmodules/Specifications/SpecificationDetails.aspx?specificationId=3228
 
 - ### 8.3.1 S-NG-RAN node Addition Preparation
