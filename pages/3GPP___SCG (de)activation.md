@@ -1,1 +1,1 @@
-- Work Item: [[🏷 Further Multi-RAT Dual-Connectivity enhancements]]
+- Work Item: [[3GPP/Work Item/Further Multi-RAT Dual-Connectivity enhancements]]

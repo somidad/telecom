@@ -1,4 +1,3 @@
-alias:: 🏷 Further Multi-RAT Dual-Connectivity enhancements
 tags:: Rel-17
 
 - [WI page](https://portal.3gpp.org/desktopmodules/WorkItem/WorkItemDetails.aspx?workitemId=860049)
