@@ -1,2 +1,2 @@
 - (Omitted)
-- In (NG)EN-DC and NR-DC, if the SCG is deactivated as described in clause 7.13, whether to perform security key update upon SCG activation is up to network implementation.
+- In (NG)EN-DC and NR-DC, if the [SCG is deactivated]([[3GPP/SCG (de)activation]]) as described in [clause 7.13](((4cdb5cc0-ca2f-4c10-b0b9-d7492cc3e298))), whether to perform security key update upon SCG activation is up to network implementation.
