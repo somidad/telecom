@@ -1,6 +1,5 @@
----
-Repository: https://portal.3gpp.org/desktopmodules/Specifications/SpecificationDetails.aspx?specificationId=3194
----
+alias:: 🏷 NR MAC
+Repository:: https://portal.3gpp.org/desktopmodules/Specifications/SpecificationDetails.aspx?specificationId=3194
 
 - ### 5.4.6 Power Headroom Reporting
 	- The Power Headroom reporting procedure is used to provide the serving gNB with the following information:
