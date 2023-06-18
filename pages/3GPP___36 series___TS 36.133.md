@@ -1,3 +1,6 @@
+alias:: 🏷 E-UTRA; Requirements for support of radio resource management
+repository:: https://portal.3gpp.org/desktopmodules/Specifications/SpecificationDetails.aspx?specificationId=2420
+
 - ## 7.32 Interruptions with EN-DC
 	- ### 7.32.2 Requirements
 		- #### 7.32.2.17 Interruptions at [SCG activation/deactivation]([[3GPP/SCG (de)activation]])
