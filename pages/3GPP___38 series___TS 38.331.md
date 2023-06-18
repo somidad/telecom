@@ -2,6 +2,7 @@ alias:: 🏷 NR RRC protocol specification
 repository:: https://portal.3gpp.org/desktopmodules/Specifications/SpecificationDetails.aspx?specificationId=3197
 
 - ### 5.3.5 RRC reconfiguration
+  id:: 648f1661-0a9d-477e-84a8-2afd4a94476a
 	- #### 5.3.5.3 Reception of an RRCReconfiguration by the UE
 		- (Omitted)
 		- 1>	if the UE is configured with E-UTRA nr-SecondaryCellGroupConfig (UE in (NG)EN-DC):

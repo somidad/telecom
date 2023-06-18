@@ -1,0 +1,42 @@
+- ## 7.32 Interruptions with EN-DC
+	- ### 7.32.2 Requirements
+		- #### 7.32.2.17 Interruptions at [SCG activation/deactivation]([[3GPP/SCG (de)activation]])
+			- The UE is allowed an interruption of up to X1 subframes (synchronous EN-DC) or X1+1 subframes (asynchronous EN-DC) on PCell and activated SCells in MCG if configured during the RRC reconfiguration procedure of SCG activation/deactivation in intraband EN-DC. This interruption is for both uplink and downlink of PCell and the activated SCells. For PSCell activation X1 is equal to the duration of the SMTC of the PSCell being activated + 1 ms. For PSCell deactivation X1 is equal to 1ms. The interruption is based on assumption that the cell specific reference signals from both cells are available in the same slot.
+			- The UE is allowed an interruption of up to 1 subframe (synchronous EN-DC) or 2 subframes (asynchronous EN-DC)on PCell and activated SCells in MCG if configured during the RRC reconfiguration procedure of SCG deactivation in interband EN-DC. This interruption is for both uplink and downlink of PCell and activated SCells.
+		- #### 7.32.2.20 Interruptions due to RRM measurements on [deactivated NR SCG]([[3GPP/SCG (de)activation]])
+			- If the UE is not configured with RLM or BFD on the deactivated NR PSCell, interruptions on E-UTRA PCell or activated E-UTRA SCell(s) due to measurements on the deactivated NR PSCell are allowed with up to 0.5% probability of missed ACK/NACK feedback when the configured measCyclePSCell is 640ms or longer.
+				- For inter-band EN-DC, the UE is only allowed to cause interruptions immediately before and immediately after an SMTC. Each interruption shall not exceed 1 subframe for synchronous inter-band EN-DC or 2 subframes for asynchronous inter-band EN-DC.
+				- For synchronous intra-band EN-DC, the UE is only allowed to cause an interruption no earlier than 1 subframe before an SMTC and no later than 1 subframe after the SMTC. The interruption shall not exceed the duration of the SMTC of the deactivated NR PSCell + 2 subframes. The interruption is based on assumption that the cell specific reference signals from both cells are available in the same slot.
+			- If the UE is configured with RLM or BFD on the deactivated NR PSCell, interruptions on E-UTRA PCell or activated E-UTRA SCell(s) due to measurements on the deactivated NR PSCell are allowed with up to 1.0% probability of missed ACK/NACK feedback.
+- ## 7.38 [SCG Activation and Deactivation Delay]([[3GPP/SCG (de)activation]])
+	- ### 7.38.1 Introduction
+		- This clause defines requirements for the delay within which the UE shall be able to activate one SCG and deactivate on SCG in EN-DC. The requirements are applicable to an E-UTRA-FDD – NR and E-UTRA-TDD – NR dual connectivity capable UE.
+	- ### 7.38.2 SCG Activation Delay Requirement
+		- The requirements in this clause shall apply for the UE configured with one deactivated SCG in EN-DC, and when PScell in one SCG is being activated.
+		- The delay within which the UE shall be able to activate the deactivated SCG depends upon the specified conditions.
+		- Upon receiving SCG activation command in slot n, the UE shall be capable to transmit PRACH preamble or PUCCH towards PSCell no later than in slot $n+\frac{T_{activation\_time}}{(NR\ slot\ length)}$,
+			- where:
+				- $T_{activation\_time} = T_{RRC\_delay} + T_{processing} + T_{search} + T_∆ + T_{IU} + 2 ms$
+				- $T_{RRC\_delay}$ is the RRC procedure delay as specified in TS 38.331 [2].
+				- $T_{processing}$ is the SW processing time needed by UE, including RF warm up period. When PSCell is activated from deactivated state, if any PSCell parameter is modified, $T_{processing}$ = [20ms]. Otherwise, $T_{processing}$ = [5 or 10ms].
+				- $T_{search}$ is the time for AGC settling and PSS/SSS detection.
+					- For RACH based PSCell activation, if the target cell is a known NR FR1 or FR2 PScell, $T_{search}$ = 0 ms. If the target cell is an unknown FR1 PScell and Es/Iot ≥ -2 dB, $T_{search}$ = 3* $T_{rs}$ ms. If the target cell is an unknown FR2 PScell and Es/Iot ≥ -2 dB, then $T_{search}$ = 24* Trs ms.
+					- For RACH-less based PSCell activation, if RLM and BFD are configured and no failure is detected, $T_{search}$ = 0 ms if the target cell is a known FR2 PScell. There are no requirements if PSCell is unknown.
+				- $T_∆$ is time for fine time tracking and acquiring full timing information of the target PSCell. $T_∆$ = 1*$T_{rs}$ ms.
+				- $T_{IU}$: When RACH based PSCell activation is configured, it is the delay uncertainty in acquiring the first available PRACH occasion in the PSCell. TIU is up to the summation of SSB to PRACH occasion association period and 10 ms. SSB to PRACH occasion associated period is defined in Table 8.1-1 of TS 38.213 [3].
+					- When RACH-less based PSCell activation is configured, it is the uncertainty in acquiring the first PUSCH transmission occasion [or SR on PUCCH].
+				- $T_{rs}$ is the SMTC periodicity of the PScell if the UE has been provided with an SMTC configuration for the target cell in PSCell addition message, otherwise $T_{rs}$ is the SMTC configured in the measObjectNR having the same SSB frequency and subcarrier spacing. If the UE is not provided SMTC configuration or measurement object on this frequency, the requirement in this clause is applied with $T_{rs}$ = 5 ms assuming the SSB transmission periodicity is 5 ms. There is no requirement if the SSB transmission periodicity is not 5.
+		- In FR1 and FR2, the PSCell is known if it has been meeting the following conditions:
+			- During the last 5 seconds before the reception of the SCG activation command:
+				- the UE has sent a valid measurement report for the PSCell being activated and
+				- One of the SSBs measured from the PSCell being activated remains detectable according to the cell identification conditions specified in clause 9.3.
+			- One of the SSBs measured from PSCell being activated also remains detectable during the PSCell activation delay $T_{config\_PSCell}$ according to the cell identification conditions specified in clause 9.3.
+		- otherwise it is unknown.
+		- The PCell interruption specified in clause 8.2 is allowed only during the RRC reconfiguration procedure [2].
+	- ### 7.38.3 SCG Deactivation Delay Requirement
+		- The requirements in this clause shall apply for a UE which is configured with at least PCell and PSCell.
+		- Upon receiving SCG deactivation command in subframe n, the UE shall accomplish the deactivation actions specified in TS 38.331 [2] no later than in slot $n+\frac{T_{RRC\_delay}}{NR\ slot\ length}$:
+			- where
+				- ${T_{RRC\_delay}}$ is the RRC procedure delay as specified in TS 38.331 [2].
+		- The PCell interruption specified in clause 8.2 is allowed only during the [RRC reconfiguration procedure](((648f1661-0a9d-477e-84a8-2afd4a94476a))).
+		- FFS: MAC CE based SCG deactivation delay requirements.
