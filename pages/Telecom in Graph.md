@@ -6,4 +6,4 @@ icon:: 📶
 	- [SCG (de)activation]([[3GPP/SCG (de)activation]])
 - Support
 	- If you feel this is useful, please consider to support me
-	- ![https://www.buymeacoffee.com/somidad](../assets/greeen-button_1687096631457_0.png){:width 200}
+	- <a href="https://www.buymeacoffee.com/somidad"><img src="/assets/greeen-button_1687096631457_0.png" width="200"></a>
