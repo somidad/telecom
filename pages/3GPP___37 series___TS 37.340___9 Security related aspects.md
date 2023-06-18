@@ -1,0 +1,2 @@
+- (Omitted)
+- In (NG)EN-DC and NR-DC, if the SCG is deactivated as described in clause 7.13, whether to perform security key update upon SCG activation is up to network implementation.
