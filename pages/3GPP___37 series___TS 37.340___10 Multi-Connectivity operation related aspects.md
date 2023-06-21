@@ -1,6 +1,6 @@
 - ## 10.1 General
 	- (Omitted)
-	- Configuration of a [deactivated SCG]([[3GPP/SCG (de)activation]]) in a conditional configuration, configuration of CPC while the SCG is deactivated and SCG deactivation while CPC is configured are not supported.
+	- Configuration of a [deactivated SCG]([[3GPP/NR/SCG (de)activation]]) in a conditional configuration, configuration of CPC while the SCG is deactivated and SCG deactivation while CPC is configured are not supported.
 	- (Omitted)
 - {{embed [[3GPP/37 series/TS 37.340/10.2 Secondary Node Addition]]}}
 - {{embed [[3GPP/37 series/TS 37.340/10.3 Secondary Node Modification (MN, SN initiated)]]}}

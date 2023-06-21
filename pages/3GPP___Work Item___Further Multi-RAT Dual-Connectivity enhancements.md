@@ -10,7 +10,7 @@ repository:: https://portal.3gpp.org/desktopmodules/WorkItem/WorkItemDetails.asp
 - # 4 Objective
 	- ## 4.1 Objective of SI or Core part WI or Testing part WI
 		- The objective of this work item is to specify enhancements to MR-DC related scenarios. At least the following topics should be considered in the work:
-			- 1.	Support efficient [activation/de-activation mechanism for one SCG and SCells]([[3GPP/SCG (de)activation]])
+			- 1.	Support efficient [activation/de-activation mechanism for one SCG and SCells]([[3GPP/NR/SCG (de)activation]])
 				- Support for one SCG  applies to (NG)EN-DC, and NR-DC [RAN2, RAN3, RAN4]
 				- Support for SCells applies to NR CA, based on RAN1 leading mechanisms [RAN1, RAN2, RAN4]
 				- This objective applies to FR1 and FR2

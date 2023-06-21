@@ -3,15 +3,15 @@ repository:: https://portal.3gpp.org/desktopmodules/Specifications/Specification
 
 - ## 7.32 Interruptions with EN-DC
 	- ### 7.32.2 Requirements
-		- #### 7.32.2.17 Interruptions at [SCG activation/deactivation]([[3GPP/SCG (de)activation]])
+		- #### 7.32.2.17 Interruptions at [SCG activation/deactivation]([[3GPP/NR/SCG (de)activation]])
 			- The UE is allowed an interruption of up to X1 subframes (synchronous EN-DC) or X1+1 subframes (asynchronous EN-DC) on PCell and activated SCells in MCG if configured during the RRC reconfiguration procedure of SCG activation/deactivation in intraband EN-DC. This interruption is for both uplink and downlink of PCell and the activated SCells. For PSCell activation X1 is equal to the duration of the SMTC of the PSCell being activated + 1 ms. For PSCell deactivation X1 is equal to 1ms. The interruption is based on assumption that the cell specific reference signals from both cells are available in the same slot.
 			- The UE is allowed an interruption of up to 1 subframe (synchronous EN-DC) or 2 subframes (asynchronous EN-DC)on PCell and activated SCells in MCG if configured during the RRC reconfiguration procedure of SCG deactivation in interband EN-DC. This interruption is for both uplink and downlink of PCell and activated SCells.
-		- #### 7.32.2.20 Interruptions due to RRM measurements on [deactivated NR SCG]([[3GPP/SCG (de)activation]])
+		- #### 7.32.2.20 Interruptions due to RRM measurements on [deactivated NR SCG]([[3GPP/NR/SCG (de)activation]])
 			- If the UE is not configured with RLM or BFD on the deactivated NR PSCell, interruptions on E-UTRA PCell or activated E-UTRA SCell(s) due to measurements on the deactivated NR PSCell are allowed with up to 0.5% probability of missed ACK/NACK feedback when the configured measCyclePSCell is 640ms or longer.
 				- For inter-band EN-DC, the UE is only allowed to cause interruptions immediately before and immediately after an SMTC. Each interruption shall not exceed 1 subframe for synchronous inter-band EN-DC or 2 subframes for asynchronous inter-band EN-DC.
 				- For synchronous intra-band EN-DC, the UE is only allowed to cause an interruption no earlier than 1 subframe before an SMTC and no later than 1 subframe after the SMTC. The interruption shall not exceed the duration of the SMTC of the deactivated NR PSCell + 2 subframes. The interruption is based on assumption that the cell specific reference signals from both cells are available in the same slot.
 			- If the UE is configured with RLM or BFD on the deactivated NR PSCell, interruptions on E-UTRA PCell or activated E-UTRA SCell(s) due to measurements on the deactivated NR PSCell are allowed with up to 1.0% probability of missed ACK/NACK feedback.
-- ## 7.38 [SCG Activation and Deactivation Delay]([[3GPP/SCG (de)activation]])
+- ## 7.38 [SCG Activation and Deactivation Delay]([[3GPP/NR/SCG (de)activation]])
 	- ### 7.38.1 Introduction
 		- This clause defines requirements for the delay within which the UE shall be able to activate one SCG and deactivate on SCG in EN-DC. The requirements are applicable to an E-UTRA-FDD – NR and E-UTRA-TDD – NR dual connectivity capable UE.
 	- ### 7.38.2 SCG Activation Delay Requirement

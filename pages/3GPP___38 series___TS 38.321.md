@@ -7,7 +7,7 @@ Repository:: https://portal.3gpp.org/desktopmodules/Specifications/Specification
 			- 2>	set PREAMBLE_POWER_RAMPING_STEP to msgA-PreamblePowerRampingStep;
 			- 2>	set SCALING_FACTOR_BI to 1;
 			- 2>	apply preambleTransMax included in the RACH-ConfigGenericTwoStepRA;
-			- 2>	if the Random Access procedure was initiated for reconfiguration with sync or for [SCG activation]([[3GPP/SCG (de)activation]]); and
+			- 2>	if the Random Access procedure was initiated for reconfiguration with sync or for [SCG activation]([[3GPP/NR/SCG (de)activation]]); and
 			- 2>	if cfra-TwoStep is configured for the selected carrier:
 				- 3>	if msgA-TransMax is configured in the cfra-TwoStep:
 					- 4>	apply msgA-TransMax configured in the cfra-TwoStep.
@@ -19,7 +19,7 @@ Repository:: https://portal.3gpp.org/desktopmodules/Specifications/Specification
 				- 3>	set PREAMBLE_POWER_RAMPING_STEP to the powerRampingStepHighPriority included in the ra-PrioritizationTwoStep in beamFailureRecoveryConfig;
 				- 3>	if scalingFactorBI is configured in the ra-PrioritizationTwoStep in beamFailureRecoveryConfig:
 					- 4>	set SCALING_FACTOR_BI to the scalingFactorBI.
-			- 2>	else if the Random Access procedure was initiated for reconfiguration with sync or for [SCG activation]([[3GPP/SCG (de)activation]]); and
+			- 2>	else if the Random Access procedure was initiated for reconfiguration with sync or for [SCG activation]([[3GPP/NR/SCG (de)activation]]); and
 			- 2>	if rach-ConfigDedicated is configured for the selected carrier; and
 			- 2>	if ra-PrioritizationTwoStep is configured in the rach-ConfigDedicated:
 				- 3>	set PREAMBLE_POWER_RAMPING_STEP to the powerRampingStepHighPriority included in the ra-PrioritizationTwoStep in rach-ConfigDedicated;
@@ -66,7 +66,7 @@ Repository:: https://portal.3gpp.org/desktopmodules/Specifications/Specification
 				- 3>	set PREAMBLE_POWER_RAMPING_STEP to the powerRampingStepHighPriority included in the ra-Prioritization in beamFailureRecoveryConfig;
 				- 3>	if scalingFactorBI is configured in ra-Prioritization in the beamFailureRecoveryConfig:
 					- 4>	set SCALING_FACTOR_BI to the scalingFactorBI.
-			- 2>	else if the Random Access procedure was initiated for reconfiguration with sync or for [SCG activation]([[3GPP/SCG (de)activation]]); and
+			- 2>	else if the Random Access procedure was initiated for reconfiguration with sync or for [SCG activation]([[3GPP/NR/SCG (de)activation]]); and
 			- 2>	if rach-ConfigDedicated is configured for the selected carrier; and
 			- 2>	if ra-Prioritization is configured in the rach-ConfigDedicated:
 				- 3>	set PREAMBLE_POWER_RAMPING_STEP to the powerRampingStepHighPriority included in the ra-Prioritization in rach-ConfigDedicated;
@@ -108,7 +108,7 @@ Repository:: https://portal.3gpp.org/desktopmodules/Specifications/Specification
 		- Type 3 power headroom: the difference between the nominal UE maximum transmit power and the estimated power for SRS transmission per activated Serving Cell;
 		- MPE P-MPR: the power backoff to meet the MPE FR2 requirements for a Serving Cell operating on FR2.
 	- (Omitted)
-- ## 5.29 [Activation/Deactivation of SCG]([[3GPP/SCG (de)activation]])
+- ## 5.29 [Activation/Deactivation of SCG]([[3GPP/NR/SCG (de)activation]])
 	- The network may activate and deactivate the configured SCG.
 	- The MAC entity shall for the configured SCG:
 		- 1>	if upper layers indicate that SCG is activated:

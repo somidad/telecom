@@ -49,13 +49,13 @@ repository:: https://portal.3gpp.org/desktopmodules/Specifications/Specification
 		- The meaning of the different cause values is specified in the following table. In general, "not supported" cause values indicate that the related capability is missing. On the other hand, "not available" cause values indicate that the related capability is present, but insufficient resources were available to perform the requested action.
 		- Radio Network Layer Cause / Meaning
 			- (Omitted)
-			- [SCG activation deactivation]([[3GPP/SCG (de)activation]]) failure
+			- [SCG activation deactivation]([[3GPP/NR/SCG (de)activation]]) failure
 				- The action failed due to rejection of the SCG activation deactivation request.
 			- (Omitted)
 		- (Omitted)
 	- #### 9.2.3.154 SCG Activation Request
-		- This IE indicates whether the [SCG resources are required to be activated or deactivated]([[3GPP/SCG (de)activation]]).
+		- This IE indicates whether the [SCG resources are required to be activated or deactivated]([[3GPP/NR/SCG (de)activation]]).
 		- ![image.png](../assets/image_1687107004044_0.png)
 	- #### 9.2.3.155 SCG Activation Status
-		- This IE indicates [the status of the SCG resources]([[3GPP/SCG (de)activation]]).
+		- This IE indicates [the status of the SCG resources]([[3GPP/NR/SCG (de)activation]]).
 		- ![image.png](../assets/image_1687107033918_0.png)
