@@ -1,15 +1,10 @@
 alias:: 🏷 Characteristics of the Universal Subscriber Identity Module (USIM) application
 - ### 4.2.15 $EF_{ACC}$ (Access Control Class)
-	- This EF contains the assigned access control class(es). The access
-	  control class is a parameter to control the access attempts. 15 classes are
-	  split into 10 classes randomly allocated to normal subscribers and 5 classes
-	  allocated to specific high priority users. For more information see TS 22.011 [2].
+	- This EF contains the assigned access control class(es). The access control class is a parameter to control the access attempts. 15 classes are split into 10 classes randomly allocated to normal subscribers and 5 classes allocated to specific high priority users. For more information see TS 22.011 [2].
 	- ![image.png](../assets/image_1687699304517_0.png)
 	- Access control classes
 		- Coding
-			- each ACC is coded on one bit. An ACC is "allocated" if the
-			  corresponding bit is set to 1 and "not allocated" if this bit is set
-			  to 0. Bit b3 of byte 1 is set to 0.
+			- each ACC is coded on one bit. An ACC is "allocated" if the corresponding bit is set to 1 and "not allocated" if this bit is set to 0. Bit b3 of byte 1 is set to 0.
 			- Byte 1
 				- ![image.png](../assets/image_1687699820493_0.png)
 			- Byte 2
