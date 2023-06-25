@@ -1,3 +1,4 @@
+alias:: 🏷 Characteristics of the Universal Subscriber Identity Module (USIM) application
 - ### 4.2.15 $EF_{ACC}$ (Access Control Class)
 	- This EF contains the assigned access control class(es). The access
 	  control class is a parameter to control the access attempts. 15 classes are
