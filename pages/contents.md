@@ -1,1 +1,2 @@
 - This page is not used
+- [config.edn](../assets/config.edn)
