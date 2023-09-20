@@ -1,0 +1,26 @@
+#### 4.2.7.9 MRDC-Parameters
+	- **[scg-ActivationDeactivationENDC-r17]([[SCG (de)activation|SCG (de)activation]])**
+		- Per: BC
+		- Mandatory: No
+		- FDD-TDD DIFF: N/A
+		- FR1-FR2 DIFF: N/A
+		- Indicates whether the UE supports activation (with or without RACH) and deactivation on SCG in EN-DC, upon SCG addition and upon reconfiguration of the SCG, as specified in TS 38.331 [9]. A UE supporting this feature shall indicate support of EN-DC as specified in TS 36.331 [17]. For the UE supporting this feature, it is mandatory to report maxNumberCSI-RS-BFD and maxNumberSSB-BFD for all NR bands of this band combination where the UE supports SpCell.
+	- **[scg-ActivationDeactivationResumeENDC-r17]([[SCG (de)activation|SCG (de)activation]])**
+		- Per: BC
+		- Mandatory: No
+		- FDD-TDD DIFF: N/A
+		- FR1-FR2 DIFF: N/A
+		- Indicates whether the UE supports activation (with or without RACH) and deactivation on SCG in EN-DC, upon reception of an RRCReconfiguration included in an RRCConnectionResume message, as specified in TS 38.331 [9] and TS 36.331 [17], A UE supporting this feature shall indicate support of EN-DC and support of resumeWithSCG-Config-r16 as specified in TS 36.331 [17]. For the UE supporting this feature, it is mandatory to report maxNumberCSI-RS-BFD and maxNumberSSB-BFD for all NR bands of this band combination where the UE supports SpCell.
+- #### 4.2.7.12 NRDC-Parameters
+	- **[scg-ActivationDeactivationNRDC-r17]([[SCG (de)activation|SCG (de)activation]])**
+		- Per: BC
+		- Mandatory: No
+		- FDD-TDD DIFF: No
+		- FR1-FR2 DIFF: No
+		- Indicates whether the UE supports activation (with or without RACH) and deactivation on SCG in NR-DC, upon SCG addition and upon reconfiguration of the SCG, as specified in TS 38.331 [9]. A UE supporting this feature shall indicate support of NR-DC as specified in TS 38.331 [9]. For the UE supporting this feature, it is mandatory to report maxNumberCSI-RS-BFD and maxNumberSSB-BFD for all NR bands of this band combination where the UE supports SpCell.
+	- **[scg-ActivationDeactivationResumeNRDC-r17]([[SCG (de)activation|SCG (de)activation]])**
+		- Per: BC
+		- Mandatory: No
+		- FDD-TDD DIFF: No
+		- FR1-FR2 DIFF: No
+		- Indicates whether the UE supports activation (with or without RACH) and deactivation on SCG in NR-DC, upon reception of an RRCReconfiguration included in an RRCResume message, as specified in TS 38.331 [9]. A UE supporting this feature shall indicate support of NR-DC and of resumeWithSCG-Config-r16 as specified in TS 38.331 [9]. For the UE supporting this feature, it is mandatory to report maxNumberCSI-RS-BFD and maxNumberSSB-BFD for all NR bands of this band combination where the UE supports SpCell.
