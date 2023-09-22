@@ -1,5 +1,0 @@
-- #standardization
-- Complete work Plan
-	- FTP: https://www.3gpp.org/ftp/Information/WORK_PLAN/
-- Search tool in 3GPP portal
-	- https://portal.3gpp.org/#/55935-work-plan
