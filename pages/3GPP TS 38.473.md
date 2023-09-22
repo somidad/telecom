@@ -1,0 +1,11 @@
+- > Title:
+- ### 8.3.1 UE Context Setup
+	- #### 8.3.1.2 Successful Operation
+		- TODO TBU
+		- If the *[SCG Activation Request]([[SCG (de)activation|SCG (de)activation]])* IE is included in the UE CONTEXT SETUP REQUEST message, the gNB-DU may use it to configure SCG resources as specified in TS 37.340 [7], and if supported, shall include the *[SCG Activation Status]([[SCG (de)activation|SCG (de)activation]])* IE in the UE CONTEXT SETUP RESPONSE message. If the *[SCG Activation Request]([[SCG (de)activation|SCG (de)activation]])* IE in the UE CONTEXT SETUP REQUEST message is set to "[Activate SCG]([[SCG (de)activation|SCG (de)activation]])", the gNB-DU shall [activate the SCG]([[SCG (de)activation|SCG (de)activation]]) resources and set the *[SCG Activation Status]([[SCG (de)activation|SCG (de)activation]])* IE in the UE CONTEXT SETUP RESPONSE message to "[SCG Activated]([[SCG (de)activation|SCG (de)activation]])".
+		- TODO TBU
+- ### 8.3.4 UE Context Modification (gNB-CU initiated)
+	- #### 8.3.4.2 Successful Operation
+		- TODO TBU
+		- If the *[SCG Activation Request]([[SCG (de)activation|SCG (de)activation]])* IE is included in the UE CONTEXT MODIFICATION REQUEST message, the gNB-DU may use it to configure SCG resources as specified in TS 37.340 [7] , and if supported, shall include the *[SCG Activation Status]([[SCG (de)activation|SCG (de)activation]])* IE in the UE CONTEXT MODIFICATION RESPONSE message.
+		- TODO TBU
