@@ -1,0 +1,136 @@
+- > Title: NR; Medium Access Control (MAC) protocol specification
+- ### 5.1.1a Initialization of variables specific to Random Access type
+  collapsed:: true
+	- The MAC entity shall:
+		- 1> if *RA_TYPE* is set to *2-stepRA*:
+			- TODO TBU
+			- 2> if the Random Access procedure was initiated for reconfiguration with sync or for [SCG activation]([[./SCG (de)activation|SCG (de)activation]]); and
+			- 2> if *cfra-TwoStep* is configured for the selected carrier:
+				- 3> if *msgA-TransMax* is configured in the *cfra-TwoStep*:
+					- 4> apply *msgA-TransMax* configured in the *cfra-TwoStep*.
+			- 2> else if *msgA-TransMax* is included in the *RACH-ConfigCommonTwoStepRA*:
+				- 3> apply *msgA-TransMax* included in the *RACH-ConfigCommonTwoStepRA*.
+			- TODO TBU
+			- 2> else if the Random Access procedure was initiated for reconfiguration with sync or for [SCG activation]([[./SCG (de)activation|SCG (de)activation]]); and
+			- 2> if *rach-ConfigDedicated* is configured for the selected carrier; and
+			- 2> if *ra-PrioritizationTwoStep* is configured in the *rach-ConfigDedicated*:
+				- 3> set *PREAMBLE_POWER_RAMPING_STEP* to the *powerRampingStepHighPriority* included in the *ra-PrioritizationTwoStep* in *rach-ConfigDedicated*;
+				- 3> if *scalingFactorBI* is configured in *ra-PrioritizationTwoStep* in the *rach-ConfigDedicated*:
+					- 4> set *SCALING_FACTOR_BI* to the *scalingFactorBI*.
+			- TODO TBU
+		- 1> else (i.e. *RA_TYPE* is set to *4-stepRA*):
+			- TODO TBU
+			- 2> else if the Random Access procedure was initiated for reconfiguration with sync or for [SCG activation]([[./SCG (de)activation|SCG (de)activation]]); and
+			- 2> if *rach-ConfigDedicated* is configured for the selected carrier; and
+			- 2> if *ra-Prioritization* is configured in the *rach-ConfigDedicated*:
+				- 3> set *PREAMBLE_POWER_RAMPING_STEP* to the *powerRampingStepHighPriority* included in the *ra-Prioritization* in *rach-ConfigDedicated*;
+				- 3> if *scalingFactorBI* is configured in *ra-Prioritization* in the *rach-ConfigDedicated*:
+					- 4> set *SCALING_FACTOR_BI* to the *scalingFactorBI*.
+			- TODO TBU
+- ### 5.4.6 Power Headroom Reporting
+  collapsed:: true
+	- TODO TBU
+	- A Power Headroom Report (PHR) shall be triggered if any of the following events occur:
+		- TODO TBU
+		- [activation of an SCG]([[./SCG (de)activation|SCG (de)activation]]);
+		- addition of the PSCell except if the [SCG is deactivated]([[./SCG (de)activation|SCG (de)activation]]) (i.e. PSCell is newly added or changed);
+		- TODO TBU
+- ## 5.9 Activation/Deactivation of SCells
+  collapsed:: true
+	- TODO TBU
+	- The configured SCell(s) is activated and deactivated by:
+		- TODO TBU
+		- receiving *[scg-State]([[./SCG (de)activation|SCG (de)activation]])*: the SCells of SCG are deactivated.
+	- The MAC entity shall for each configured SCell:
+		- TODO TBU
+		- 1> if the [SCG associated with the activated SCell is deactivated]([[./SCG (de)activation|SCG (de)activation]]):
+			- 2> deactivate the SCell according to the timing defined in TS 38.213 [6];
+			- 2> stop the *sCellDeactivationTimer* associated with the SCell;
+			- 2> stop the *bwp-InactivityTimer* associated with the SCell;
+			- 2> deactivate any active BWP associated with the SCell;
+			- 2> clear any configured downlink assignment and any configured uplink grant Type 2 associated with the SCell respectively;
+			- 2> clear any PUSCH resource for semi-persistent CSI reporting associated with the SCell;
+			- 2> suspend any configured uplink grant Type 1 associated wit the SCell;
+			- 2> flush all HARQ buffers associated with the SCell;
+			- 2> cancel, if any, triggered consistent LBT failure for the SCell;
+		- TODO TBU
+- ## 5.12 MAC Reset
+  collapsed:: true
+	- If a reset of the MAC entity is requested by upper layers or the reset of the MAC entity is triggered due to [SCG deactivation]([[./SCG (de)activation|SCG (de)activation]]) as defined in [clause 5.29](((650bb3e3-4fb0-401f-9b4a-20bf5e79dd37))), the MAC entity shall:
+		- 1> if the MAC reset is not due to [SCG deactivation]([[./SCG (de)activation|SCG (de)activation]]):
+			- 2> initialize *Bj* for each logical channel to zero;
+		- TODO TBU
+		- 1> if upper layers indicate [SCG deactivation]([[./SCG (de)activation|SCG (de)activation]]) and *bfd-and-RLM* with value *true* is configured for the [deactivated SCG]([[./SCG (de)activation|SCG (de)activation]]):
+			- 2> stop (if running) all timers except *beamFailureDetectionTimer* associated with PSCell and *timeAlignmentTimers*.
+		- TODO TBU
+		- 1> if upper layers indicate [SCG deactivation]([[./SCG (de)activation|SCG (de)activation]]) and *bfd-and-RLM* with value *true* is not configured; or
+		- 1> if the MAC reset is not due to [SCG deactivation]([[./SCG (de)activation|SCG (de)activation]]):
+			- 2> reset all *BFI_COUNTERS*;
+		- 1> reset all *LBT_COUNTERS*.
+	- TODO TBU
+- ## 5.15 Bandwidth Part (BWP) operation
+	- ### 5.15.1 Downlink and Uplink
+		- TODO TBU
+		- The BWP switching for a Serving Cell is used to activate an inactive BWP and deactivate an active BWP at a time. The BWP switching is controlled by the PDCCH indicating a downlink assignment or an uplink grant, by the *bwp-InactivityTimer*, by RRC signalling, or by the MAC entity itself upon initiation of Random Access procedure or upon detection of consistent LBT failure on SpCell. Upon RRC (re-)configuration of *firstActiveDownlinkBWP-Id* and/or *firstActiveUplinkBWP-Id* for SpCell except for PSCell when [SCG is deactivated]([[./SCG (de)activation|SCG (de)activation]]) (see [clause 5.29](((650bb3e3-4fb0-401f-9b4a-20bf5e79dd37)))) or activation of an SCell, the DL BWP and/or UL BWP indicated by *firstActiveDownlinkBWP-Id* and/or *firstActiveUplinkBWP-Id* respectively (as specified in TS 38.331 [5]) is active without receiving PDCCH indicating a downlink assignment or an uplink grant. Upon RRC (re-)configuration of *firstActiveDownlinkBWP-Id* for PSCell when [SCG is deactivated]([[./SCG (de)activation|SCG (de)activation]]), the DL BWP is switched to the *firstActiveDownlinkBWP-Id* as specified in TS 38.331 [5]. The active BWP for a Serving Cell is indicated by either RRC or PDCCH (as specified in TS 38.213 [6]). For unpaired spectrum, a DL BWP is paiired with a UL BWP, and BWP switching is common for both UL and DL.
+		- TODO TBU
+		- For each activated Serving Cell configured with a BWP, the MAC entity shall:
+			- TODO TBU
+			- 1> if a BWP is deactivated or the Serving Cell is PSCell of [deactivated SCG]([[./SCG (de)activation|SCG (de)activation]]):
+				- 2> not transmit on UL-SCH on the BWP;
+				- 2> not transmit on RACH on the BWP;
+				- 2> not monitor the PDCCH on the BWP;
+				- 2> not transmit PUCCH on the BWP;
+				- 2> not report CSI for the BWP;
+				- 2> not transmit SRS on the BWP;
+				- 2> not receive DL-SCH on the BWP;
+				- 2> clear any configured downlink assignment and configured uplink grant of configured grant Type 2 on the BWP;
+				- 2> suspend any configured uplink grant of configured grant Type 1 on the inactive BWP.
+		- TODO TBU
+- ## 5.17 Beam Failure Detection and Recovery procedure
+	- The MAC entity may be configured by RRC per Serving Cell or per BFD-RS set with a beam failure recovery procedure which is used for indicating to the serving gNB of a new SSB or CSI-RS when beam failure is detected on the serving SSB(s)/CSI-RS(s). Beam failure is detected by counting beam failure instance indication from the lower layers to the MAC entity. If *beamFailureRecoveryConfig* is reconfigured by upper layers during an ongoing Random Access procedure for beam failure recovery for SpCell, the MAC entity shall stop the ongoing Random Access procedure and initiate a Random Access procedure using the new configuration. The Serving Cell is configured with two BFD-RS sets if and only if *failureDetectionSet1* and *failureDetectionSet2* are configured for the active DL BWP of the Serving Cell. When the [SCG is deactivated]([[./SCG (de)activation|SCG (de)activation]]), the UE performs beam failure detection on the PSCell if *bfd-and-RLM* is set to *true*.
+	- TODO TBU
+	- The MAC entity shall for each Serving Cell configured for beam failure detection:
+		- 1> if the Serving Cell is configured with two BFD-RS sets:
+			- TODO TBU
+		- 1> else:
+			- 2> if beam failure instance indication has been received from lower layers:
+				- 3> start or restart the *beamFailureDetectionTimer*;
+				- 3> increment *BFI_COUNTER* by 1;
+				- 3> if *BFI_COUNTER >= beamFailureInstanceMaxCount*:
+					- 4> if the Serving Cell is SCell:
+						- 5> trigger BFR for this Serving Cell;
+					- 4> else if the Serving Cell is PSCell and, the [SCG is deactivated]([[./SCG (de)activation|SCG (de)activation]]):
+						- 5> if beam failure of the PSCell has not been indicated to upper layers since the [SCG was deactivated]([[./SCG (de)activation|SCG (de)activation]]) or since the [deactivated SCG]([[./SCG (de)activation|SCG (de)activation]]) was last reconfigured with BFD-RS:
+							- 6> indicate beam failure of the PSCell to upper layers.
+	- NOTE: After beam failure is indicated to upper layers, the UE may stop the *beamFailureDetectionTimer* and lower layer beam failure indication while *BFI_COUNTER >= beamFailureInstanceMaxCount* for the [deactivated SCG]([[./SCG (de)activation|SCG (de)activation]]).
+	- TODO TBU
+- ## 5.29 Activation/Deactivation of SCG
+  id:: 650bb3e3-4fb0-401f-9b4a-20bf5e79dd37
+  collapsed:: true
+	- The network may [activate and deactivate the configured SCG]([[./SCG (de)activation|SCG (de)activation]]).
+	- The MAC entity shall for the configured SCG:
+		- 1> if upper layers indicate that [SCG is activated]([[./SCG (de)activation|SCG (de)activation]]):
+			- 2> if *BFI_COUNTER >= beamFailureInstanceMaxCount* for the PSCell or the *timeAlignmentTimer* associated with PTAG is not running:
+				- 3> indicate to upper layers that a Random Access Procedure (as specified in clause 5.1.1) is needed for [SCG activation]([[./SCG (de)activation|SCG (de)activation]]).
+			- 2> [activate the SCG]([[./SCG (de)activation|SCG (de)activation]]) according to the timing defined in TS 38.133 [11].
+			- 2> (re-)initialize any suspended configured uplink grants of configured grant Type 1 associated with this PSCell according to the stored configuration, if any, and to start in the symbol according to rules in clause 5.8.2.2;
+			- 2> apply normal SCG operation including:
+				- 3> SRS transmissions on the PSCell;
+				- 3> CSI reporting for the PSCell;
+				- 3> PDCCH monitoring on the PSCell;
+				- 3> PUCCH transmissions on the PSCell;
+				- 3> transmit on RACH on the PSCell;
+				- 3> initialize *Bj* for each logical channel to zero.
+		- 1> else if upper layers indicate that the [SCG is deactivated]([[./SCG (de)activation|SCG (de)activation]]):
+			- 2> deactivate all the SCells of the SCG according to clause 5.9;
+			- 2> [deactivate SCG]([[./SCG (de)activation|SCG (de)activation]]) according to the timing defined in TS 38.133 [11].
+			- 2> clear any configured downlink assignment and any configured uplink grant Type 2 associated with the PSCell respectively;
+			- 2> suspend any configured uplink grant Type 1 associated with the PSCell;
+			- 2> reset MAC according to clause 5.12.
+		- 1> if the [SCG is deactivated]([[./SCG (de)activation|SCG (de)activation]]):
+			- 2> not transmit SRS on the PSCell;
+			- 2> not report CSI for the PSCell;
+			- 2> not transmit on UL-SCH on the PSCell;
+			- 2> not transmit PUCCH on the PSCell;
+			- 2> not transmit on RACH on the PSCell;
+			- 2> not monitor the PDCCH on the PSCell.
