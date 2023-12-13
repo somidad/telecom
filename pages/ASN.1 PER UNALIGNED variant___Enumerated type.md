@@ -25,10 +25,10 @@
 			            | 1 | 0 | value (< 64) |
 			            +---+---+--------------+
 			  ```
-			- Otherwise, the length determinant precedes and the value is encoded as [semi-constrained whole number]([[ITU-T X.691/11.7 Encoding of a semi-constrained whole number]])
+			- Otherwise, the [length determinant](((6579cc13-23e3-40ae-9270-85f099d0157b))) precedes and the value is encoded as [semi-constrained whole number]([[ITU-T X.691/11.7 Encoding of a semi-constrained whole number]])
 			- ```
-			  bits (msb)                  len-1        0 (lsb)
-			            +---+---+--------+--------------+
-			            | 1 | 1 | length | value (> 63) |
-			            +---+---+--------+--------------+
+			  bits (msb)                                     len-1        0 (lsb)
+			            +---+---+---------------------------+--------------+
+			            | 1 | 1 | length (semi-constrained) | value (> 63) |
+			            +---+---+---------------------------+--------------+
 			  ```
