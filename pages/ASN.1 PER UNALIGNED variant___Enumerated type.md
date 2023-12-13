@@ -19,14 +19,15 @@
 		  ```
 		- If the bit is set to 1, the value is encoded as a [normally small non-negative whole number]([[ITU-T X.691/11.6 normally small non-negative whole number]])
 			- If the value is less than 64, a bit 0 precedes and the value is encoded into 6 bits
-			- ```
-			  bits (msb)         5           0 (lsb)
-			            +---+---+--------------+
-			            | 1 | 0 | value (< 64) |
-			            +---+---+--------------+
-			  ```
 			- Otherwise, the [length determinant](((6579cc13-23e3-40ae-9270-85f099d0157b))) precedes and the value is encoded as [semi-constrained whole number]([[ITU-T X.691/11.7 Encoding of a semi-constrained whole number]])
 			- ```
+			            +---+---+------------------------------------------+
+			            | 1 | normally small non-negative whole number     |
+			            +---+---+------------------------------------------+
+			  bits (msb)                                     5           0  (lsb)
+			            +---+-------------------------------+--------------+
+			            | 1 | 0                             | value (< 64) |
+			            +---+-------------------------------+--------------+
 			  bits (msb)                                     len-1        0 (lsb)
 			            +---+---+---------------------------+--------------+
 			            | 1 | 1 | length (semi-constrained) | value (> 63) |
