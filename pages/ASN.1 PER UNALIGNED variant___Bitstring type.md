@@ -8,7 +8,7 @@
 		            +------------+
 		  ```
 	- ### Case 2: All other cases [🔗](((6579c11a-3b4a-4845-8c29-9b8b591f364f)))
-		- Includes: `BIT STRING`, `BIT STRING (lb..ub)`, `BIT STRING (SIZE(len))`
+		- Includes: `BIT STRING`, `BIT STRING (lb..ub)`, `BIT STRING (SIZE(len))` (len ≥ 64K)
 		- A length determinant indicating the number of bits precedes. Then a leading bit is added first.
 		- ```
 		  bits (msb)          len-1      0 (lsb)
