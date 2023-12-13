@@ -72,6 +72,8 @@
 		- **11.9.3.8.4** The addition of only a part of the associated field(s) to the field-list with reapplication of these procedures is called the fragmentation procedure.
 	- **11.9.4** (UNALIGNED variant) The procedures for the UNALIGNED variant are specified in 11.9.4.1 to 11.9.4.2 (the procedures for the ALIGNED variant are specified in 11.9.3).
 		- **11.9.4.1** If the length determinant "n" to be encoded is a constrained whole number with "ub" less than 64K, then ("n"–"lb") shall be encoded as a non-negative-binary-integer (as specified in 11.3) using the minimum number of bits necessary to encode the "range" ("ub" – "lb" + 1), unless "range" is 1, in which case there shall be no length encoding. If "n" is non-zero this shall be followed by an associated field or list of fields, completing these procedures. If "n" is zero there shall be no further addition to the field-list, completing these procedures.
+		  id:: 6579cc13-b470-4b90-ba6a-9fb959793541
 			- NOTE – If "range" satisfies the inequality $2^m < "range" \le 2^{m + 1}$, then the number of bits in the length determinant is m + 1.
 		- **11.9.4.2** If the length determinant "n" to be encoded is a normally small length, or a constrained whole number with "ub" greater than or equal to 64K, or is a semi-constrained whole number, then "n" shall be encoded as specified in 11.9.3.4 to 11.9.3.8.4.
+		  id:: 6579cc13-23e3-40ae-9270-85f099d0157b
 			- NOTE – Thus, if "ub" is greater than or equal to 64K, the encoding of the length determinant is the same as it would be if the length were unconstrained.
