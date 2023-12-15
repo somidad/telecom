@@ -16,6 +16,7 @@ publish-path: ITU-T X.691
 - [12 Encoding the boolean type](./12%20Encoding%20the%20boolean%20type.md)
 - [13 Encoding the integer type](./13%20Encoding%20the%20integer%20type.md)
 - [14 Encoding the enumerated type](./14%20Encoding%20the%20enumerated%20type.md)
+- [16 Encoding of the bitstring type](./16%20Encoding%20of%20the%20bitstring%20type.md)
+- [17 Encoding the octetstring type](./17%20Encoding%20the%20octetstring%20type.md)
 - [18 Encoding the null type](./18%20Encoding%20the%20null%20type.md)
-- [ITU-T X.691](README.md)
 
