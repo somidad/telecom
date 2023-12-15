@@ -19,7 +19,7 @@ publish-path: ITU-T X.691
 - [16 Encoding of the bitstring type](./16%20Encoding%20of%20the%20bitstring%20type.md)
 - [17 Encoding the octetstring type](./17%20Encoding%20the%20octetstring%20type.md)
 - [18 Encoding the null type](./18%20Encoding%20the%20null%20type.md)
-- [19 Encoding the sequence type](../ITUT%20X.691/19%20Encoding%20the%20sequence%20type.md)
+- [19 Encoding the sequence type](./19%20Encoding%20the%20sequence%20type.md)
 - [20 Encoding the sequence-of type](./20%20Encoding%20the%20sequence-of%20type.md)
 - [23 Encoding the choice type](./23%20Encoding%20the%20choice%20type.md)
 
