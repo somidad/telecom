@@ -13,6 +13,7 @@ publish-path: ITU-T X.691
 - [11.6 Encoding of a normally small non-negative whole number](./11.6%20Encoding%20of%20a%20normally%20small%20non-negative%20whole%20number.md)
 - [11.7 Encoding of a semi-constrained whole number](./11.7%20Encoding%20of%20a%20semi-constrained%20whole%20number.md)
 - [11.8 Encoding of an unconstrained whole number](./11.8%20Encoding%20of%20an%20unconstrained%20whole%20number.md)
+- [11.9 General rules for encoding a length determinant](./11.9%20General%20rules%20for%20encoding%20a%20length%20determinant.md)
 - [12 Encoding the boolean type](./12%20Encoding%20the%20boolean%20type.md)
 - [13 Encoding the integer type](./13%20Encoding%20the%20integer%20type.md)
 - [14 Encoding the enumerated type](./14%20Encoding%20the%20enumerated%20type.md)
