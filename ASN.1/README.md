@@ -2,7 +2,6 @@
 publish-telecom: true
 ---
 
-
 # Abstract Syntax Notation One
 
 ## Featured
