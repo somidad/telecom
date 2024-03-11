@@ -2,7 +2,6 @@
 publish-telecom: true
 ---
 
-
 **20.1** PER-visible constraints can constrain the number of components of the sequence-of type.
 
 **20.2** Let the maximum number of components in the sequence-of (as determined by PER-visible constraints) be "ub" components and the minimum number of components be "lb". If there is no finite maximum or "ub" is greater than or equal to 64K we say that "ub" is unset. If there is no constraint on the minimum, then "lb" has the value zero. Let the number of components in the actual sequence-of value to be encoded be "n" components.
