@@ -2,7 +2,6 @@
 publish-telecom: true
 ---
 
-
 **12.1** A value of the boolean type shall be encoded as a bit-field consisting of a single bit.
 
 **12.2** The bit shall be set to 1 for `TRUE` and 0 for `FALSE`.

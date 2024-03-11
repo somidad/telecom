@@ -2,7 +2,6 @@
 publish-telecom: true
 ---
 
-
 - [11.1 Production of the complete encoding](./11.1%20Production%20of%20the%20complete%20encoding.md)
 - [11.2 Open type fields](./11.2%20Open%20type%20fields.md)
 - [11.3 Encoding as a non-negative-binary-integer](./11.3%20Encoding%20as%20a%20non-negative-binary-integer.md)

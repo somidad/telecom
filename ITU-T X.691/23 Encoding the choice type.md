@@ -2,7 +2,6 @@
 publish-telecom: true
 ---
 
-
 NOTE – (Tutorial) A choice type is encoded by encoding an index specifying the chosen alternative. This is encoded as for a [constrained integer](./11.5%20Encoding%20of%20a%20constrained%20whole%20number.md) (unless the extension marker is present in the choice type, in which case it is a [normally small non-negative whole number](./11.6%20Encoding%20of%20a%20normally%20small%20non-negative%20whole%20number.md)) and would therefore typically occupy a fixed length bit-field of the minimum number of bits needed to encode the index. (Although it could in principle be arbitrarily large.) This is followed by the encoding of the chosen alternative, with alternatives that are extension additions encoded as if they were the value of an [open type field](./11.2%20Open%20type%20fields.md). Where the choice has only one alternative, there is no encoding for the index.
 
 **23.1** Encoding of choice types are not affected by PER-visible constraints.
