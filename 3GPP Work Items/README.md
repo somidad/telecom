@@ -4,7 +4,7 @@ publish-title:
 publish-path: 
 ---
 
-| Work Item                                                                                                                                    | Release    |
+| File                                                                                                                                         | Release    |
 | -------------------------------------------------------------------------------------------------------------------------------------------- | ---------- |
 | [DC and CA enhancements](./Release%2016/DC%20and%20CA%20enhancements.md)                                                     | Release 16 |
 | [Further Multi-RAT Dual-Connectivity enhancements](./Release%2017/Further%20Multi-RAT%20Dual-Connectivity%20enhancements.md) | Release 17 |
