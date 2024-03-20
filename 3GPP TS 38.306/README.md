@@ -8,7 +8,7 @@ publish-path:
 
 #### 4.2.7.2 BandNR parameters
 
-***channelBWs-DL*** ^86013d
+***channelBWs-DL*** <a id="86013d"></a>
 
 - Per Band
 - Mandatory: Yes
@@ -26,7 +26,7 @@ To determine whether the UE supports a channel bandwidth of 90 MHz, the network 
 
 #### 4.2.7.6 FeatureSetDownlinkPerCC parameters
 
-***channelBW-90mhz*** ^5f5bf3
+***channelBW-90mhz*** <a id="5f5bf3"></a>
 
 - Per FSPC
 - Mandatory: CY
@@ -35,7 +35,7 @@ To determine whether the UE supports a channel bandwidth of 90 MHz, the network 
 
 Indicates whether the UE supprots the channel bandwidth of 90 MHz. For FR1, the UE shall indicate support according to TS 38.101-1, Table 5.3.5-1.
 
-***supportedBandwidthDL, supportedBandwidthDL-v1710*** ^06439f
+***supportedBandwidthDL, supportedBandwidthDL-v1710*** <a id="06439f"></a>
 
 - Per FSPC
 - Mandatory: CY
