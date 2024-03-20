@@ -3,8 +3,9 @@ publish-telecom: true
 publish-title: 
 publish-path: 
 acronym: LTE_NR_DC_CA_enh-Core
-WID: https://www.3gpp.org/ftp/TSG_RAN/TSG_RAN/TSGR_88e/Docs/RP-200791.zip
 ---
+
+- WID: https://www.3gpp.org/ftp/TSG_RAN/TSG_RAN/TSGR_88e/Docs/RP-200791.zip
 
 ## Objectives
 
