@@ -1,6 +1,3 @@
----
-publish-telecom: true
----
 
 NOTE 1 – (Tutorial ALIGNED variant) Ranges which allow the encoding of all values into one octet or less go into a minimum-sized bit-field with no length count. Ranges which allow encoding of all values into two octets go into two octets in an octet aligned bit-field with no length count. Otherwise, the value is encoded into the minimum number of octets (using [non-negative-binary-integer](./11.3%20Encoding%20as%20a%20non-negative-binary-integer.md) or [2's complement-binary-integer](./11.4%20Encoding%20as%20a%202's-complement-binary-integer.md) encoding as appropriate) and a [length determinant](./11.9%20General%20rules%20for%20encoding%20a%20length%20determinant.md) is added. In this case, if the integer value can be encoded in less than 127 octets (as an offset from any lower bound that might be determined), and there is no finite upper and lower bound, there is a one-octet length determinant, else the length is encoded in the fewest number of bits needed. Other cases are not of any practical interest, but are specified for completeness. <a id="^783559"></a>
 
