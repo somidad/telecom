@@ -1,6 +1,3 @@
----
-publish-telecom: true
----
 
 NOTE – (Tutorial) An enumerated type without an extension marker is encoded as if it were a constrained integer whose subtype constraint does not contain an extension marker. This means that an enumerated type will almost always in practice be encoded as a bit-field in the smallest number of bits needed to express every enumeration. In the presence of an extension marker, it is encoded as a [normally small non-negative whole number](./11.6%20Encoding%20of%20a%20normally%20small%20non-negative%20whole%20number.md) if the value is not in the extension root.
 
