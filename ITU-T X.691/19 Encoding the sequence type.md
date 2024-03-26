@@ -1,6 +1,3 @@
----
-publish-telecom: true
----
 
 NOTE – (Tutorial) A sequence type begins with a preamble which is a bit-map. If the sequence type has no extension marker, then the bit-map merely records the presence or absence of default and optional components in the type, encoded as a fixed length bit-field. If the sequence type does have an extension marker, then the bit-map is preceded by a single bit that says whether values of extension additions are actually present in the encoding. The preamble is encoded without any length determinant provided it is less than 64K bits long, otherwise a [length determinant](./11.9%20General%20rules%20for%20encoding%20a%20length%20determinant.md) is encoded to obtain fragmentation. The preamble is followed by the fields that encode each of the components, taken in turn. If there are extension additions, then immediately before the first one is encoded there is the encoding (as a [normally small length](./11.9%20General%20rules%20for%20encoding%20a%20length%20determinant.md)) of a count of the number of extension additions in the type being encoded, followed by a bit-map equal in length to this count which records the presence or absence of values of each extension addition. This is followed by the encodings of the extension additions as if each one was the value of an [open type field](./11.2%20Open%20type%20fields.md).
 

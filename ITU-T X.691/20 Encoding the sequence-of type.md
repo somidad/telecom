@@ -1,6 +1,3 @@
----
-publish-telecom: true
----
 
 **20.1** PER-visible constraints can constrain the number of components of the sequence-of type.
 

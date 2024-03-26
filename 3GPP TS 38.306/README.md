@@ -1,8 +1,3 @@
----
-publish-telecom: true
-publish-title: 
-publish-path: 
----
 
 ### 4.2.7 Physical layer parameters
 
