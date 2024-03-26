@@ -1,7 +1,4 @@
 ---
-publish-telecom: true
-publish-title: 
-publish-path: 
 acronym: LTE_NR_DC_CA_enh-Core
 ---
 
