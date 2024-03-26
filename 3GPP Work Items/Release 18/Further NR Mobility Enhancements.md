@@ -1,7 +1,4 @@
 ---
-publish-telecom: true
-publish-title: 
-publish-path: 
 acronym: NR_Mob_enh2
 ---
 
