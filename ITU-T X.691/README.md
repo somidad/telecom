@@ -1,6 +1,3 @@
----
-publish-telecom: true
----
 
 - [11.1 Production of the complete encoding](./11.1%20Production%20of%20the%20complete%20encoding.md)
 - [11.2 Open type fields](./11.2%20Open%20type%20fields.md)
