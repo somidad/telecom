@@ -1,6 +1,3 @@
----
-publish-telecom: true
----
 
 NOTE – Octet strings of fixed length less than or equal to two octets are not octet-aligned. All other octet strings are octet-aligned in the ALIGNED variant. Fixed length octet strings encode with no length octets if they are shorter than 64K. For unconstrained octet strings the length is explicitly encoded (with fragmentation if necessary).
 
