@@ -10,7 +10,7 @@
 - [ITU-T X.682 (2021-02)](https://www.itu.int/rec/T-REC-X.682-202102-I/en) - Constraint
 - [ITU-T X.683 (2021-02)](https://www.itu.int/rec/T-REC-X.683-202102-I/en) - Parameterization
 - [ITU-T X.691 (2021-02)](https://www.itu.int/rec/T-REC-X.691-202102-I/en) - PER (Packed Encoding Rules)
-	- [Interlinked spec transcript](../ITU-T%20X.691/README.md)
+	- [Interlinked spec transcript](../ITU-T%20specs/ITU-T%20X.691/README.md)
 - [ITU-T X.680-X.693 (2021-02)](https://www.itu.int/rec/T-REC-X.680-X.693-202102-I/en) - Zip archive of word documents
 
 ## Resources
