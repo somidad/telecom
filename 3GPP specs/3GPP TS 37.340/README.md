@@ -10,3 +10,8 @@ repository: https://portal.3gpp.org/desktopmodules/Specifications/SpecificationD
 	- [Clause 7.13 Activation and Deactivation of SCG](./3GPP%20TS%2037.340%20clause%207.13.md)
 	- [Clause 7.14 RLM/BFD relaxation](./3GPP%20TS%2037.340%20clause%207.14.md)
 - [Clause 9 Security related aspects](./3GPP%20TS%2037.340%20clause%209.md)
+- Clause 10 Multi-Connectivity operation related aspects
+	- [Clause 10.1 General](./3GPP%20TS%20373.40%20clause%2010.1.md)
+	- Clause 10.2 Secondary Node Addition
+		- [Clause 10.2.1 EN-DC](./3GPP%20TS%2037.340%20clause%2010.2.1.md)
+		- [Clause 10.2.2 MR-DC with 5GC](./3GPP%20TS%2037.340%20clause%2010.2.2.md)
