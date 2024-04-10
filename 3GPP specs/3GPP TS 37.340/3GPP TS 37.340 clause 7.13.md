@@ -1,5 +1,5 @@
 
-## 7.13 Activation and Deactivation of SCG
+## 7.13 [Activation and Deactivation of SCG](../../3GPP%20features/SCG%20deactivation.md)
 
 To enable reasonable UE battery consumption while having fast usage of SCG when (NG)EN-DC or NR-DC is configured, an activation/deactivation mechanism of SCG is supported. While the SCG is deactivated, there is no transmission via SCG RLC bearers. Only the NR SCG can be deactivated, and all SCG SCell(s) are in deactivated state while the SCG is deactivated.
 
