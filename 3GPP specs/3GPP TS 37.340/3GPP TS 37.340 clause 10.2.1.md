@@ -1,0 +1,66 @@
+
+### 10.2.1 EN-DC
+
+**Secondary Node Addition**
+
+TBU
+
+
+1. The MN decides to request the SN to allocate resources for a specific E-RAB, indicating E-RAB characteristics (E-RAB parameters, TNL address information corresponding to bearer type). In addition, for bearers requiring SCG radio resources, MN indicates the requested SCG configuration information, including the entire UE capabilities and the UE capability coordination result. In this case, the MN also provides the latest measurement results for SN to choose and configure the SCG cell(s). The MN may request the SN to allocate radio resources for split SRB operation. The MN always provides all the needed security information to the SN (even if no SN terminated bearers are setup) to enable SRB3 to be setup based on SN decision. In case of bearer options that require X2-U resources between the MN and the SN, the MN provides X2-U TNL address information for the respective E-RAB, X2-U DL TNL address information for SN terminated bearers, X2-U UL TNL address information for MN terminated bearers. In case of SN terminated split bearers the MN provides the maximum QoS level that it can support. The MN may request the [SCG to be activated or deactivated](../../3GPP%20features/SCG%20deactivation.md). The SN may reject the addition request.
+NOTE 1: For split bearers, MCG and SCG resources may be requested of such an amount, that the QoS for the respective E-RAB is guaranteed by the exact sum of resources provided by the MCG and the SCG together, or even more. For MN terminated split bearers, the MNs decision is reflected in step 1 by the E-RAB parameters signalled to the SN, which may differ from E-RAB parameters received over S1.
+
+NOTE 2: For a specific E-RAB, the MN may request the direct establishment of an SCG or a split bearer, i.e., without first having to establish an MCG bearer. It is also allowed that all E-RABs can be configured as SN terminated bearers, i.e. there is no E-RAB established as an MN terminated bearer.
+
+2. If the RRM entity in the SN is able to admit the resource request, it allocates respective radio resources and, dependent on the bearer option, respective transport network resources. For bearers requiring SCG radio resources, the SN triggers Random Access so that synchronisation of the SN radio resource configuration can be performed. The SN decides the PSCell and other SCG SCells and provides the new SCG radio resource configuration to the MN in a _NR RRC configuration_ message contained in the _SgNB Addition Request Acknowledge_ message. In case of bearer options that require X2-U resources between the MN and the SN, the SN provides X2-U TNL address information for the respective E-RAB, X2-U UL TNL address information for SN terminated bearers, X2-U DL TNL address information for MN terminated bearers. For SN terminated bearers, the SN provides the S1-U DL TNL address information for the respective E-RAB and security algorithm. If SCG radio resources have been requested, the SCG radio resource configuration is provided. If the MN requested the [SCG to be deactivated](../../3GPP%20features/SCG%20deactivation.md), the SN may keep the SCG activated. If the MN requests the SCG to be activated, the SN shall keep the SCG activated.
+
+NOTE 3: For the SN terminated split bearer option, the SN may either decide to request resources from the MN of such an amount, that the QoS for the respective E-RAB is guaranteed by the exact sum of resources provided by the MN and the SN together, or even more. The SNs decision is reflected in step 2 by the E-RAB parameters signalled to the MN, which may differ from E-RAB parameters received in step 1. The QoS level requested from the MN shall not exceed the level that the MN offered when setting up the split bearer in step 1.
+
+NOTE 4: In case of MN terminated bearers, transmission of user plane data may take place after step 2.
+
+NOTE 5: In case of SN terminated bearers, data forwarding and the SN Status Transfer may take place after step 2.
+
+3. The MN sends to the UE the _RRCConnectionReconfiguration_ message including the NR RRC configuration message, without modifying it. Within the MN _RRCConnectionReconfiguration_ message, the MN can indicate the [SCG is deactivated](../../3GPP%20features/SCG%20deactivation.md).
+
+4. The UE applies the new configuration and replies to MN with _RRCConnectionReconfigurationComplete_ message, including a NR RRC response message, if needed. In case the UE is unable to comply with (part of) the configuration included in the _RRCConnectionReconfiguration_ message, it performs the reconfiguration failure procedure.
+
+5. The MN informs the SN that the UE has completed the reconfiguration procedure successfully via _SgNB ReconfigurationComplete_ message, including the encoded NR RRC response message, if received from the UE.
+
+6. If configured with bearers requiring SCG radio resources and the [SCG is not deactivated](../../3GPP%20features/SCG%20deactivation.md), the UE performs synchronisation towards the PSCell of the SN. The order the UE sends the _RRCConnectionReconfigurationComplete_ message and performs the Random Access procedure towards the SCG is not defined. The successful RA procedure towards the SCG is not required for a successful completion of the RRC Connection Reconfiguration procedure.
+
+7. If PDCP termination point is changed to the SN for bearers using RLC AM, and when RRC full configuration is not used, the MN sends the _SN Status Transfer_ message.
+
+8. For SN terminated bearers moved from the MN, dependent on the bearer characteristics of the respective E-RAB, the MN may take actions to minimise service interruption due to activation of EN-DC (Data forwarding).
+
+9-12. If applicable, the update of the UP path towards the EPC is performed.
+
+**Conditional Secondary Node Addition**
+
+TBU
+
+1. The MN decides to configure CPA for the UE and requests the candidate SN(s) to allocate resources for a specific E-RAB, indicating E-RAB characteristics (E-RAB parameters, TNL address information corresponding to bearer type), indicating that the request is for CPAC and providing the upper limit for the number of PSCells that can be prepared by the candidate SN. In addition, for the bearers requiring SCG radio resources, the MN indicates the requested SCG configuration information, including the entire UE capabilities and the UE capability coordination result. In this case, the MN also provides the candidate cells recommended by MN via the latest measurement results for the candidate SN to choose from and configure the SCG cell(s). The MN may request the candidate SN to allocate radio resources for split SRB operation. The MN always provides all the needed security information to the candidate SN (even if no SN terminated bearers are setup) to enable SRB3 to be setup based on SN decision. In case of bearer options that require X2-U resources between the MN and the candidate SN, the MN provides X2-U TNL address information for the respective E-RAB, X2-U DL TNL address information for SN terminated bearers, X2-U UL TNL address information for MN terminated bearers. In case of SN terminated split bearers the MN provides the maximum QoS level that it can support. The candidate SN may reject the addition request.
+
+NOTE 6: For split bearers, MCG and SCG resources may be requested of such an amount, that the QoS for the respective E-RAB is guaranteed by the exact sum of resources provided by the MCG and the SCG together, or even more. For MN terminated split bearers, the MN decision is reflected in step 1 by the E-RAB parameters signalled to the candidate SN, which may differ from E-RAB parameters received over S1.
+
+NOTE 7: For a specific E-RAB, the MN may request the direct establishment of an SCG or a split bearer, i.e., without first having to establish an MCG bearer. It is also allowed that all E-RABs can be configured as SN terminated bearers, i.e. there is no E-RAB established as an MN terminated bearer.
+
+2. If the RRM entity in the candidate SN is able to admit the resource request, it allocates respective radio resources and, dependent on the bearer option, respective transport network resources, and provides the prepared PSCell ID(s) to the MN. For bearers requiring SCG radio resources, the candidate SN configures Random Access so that synchronisation of the SN radio resource configuration can be performed at the CPA execution. From the list of cells indicated within the measurement results provided by the MN, the candidate SN decides the list of PSCell(s) to prepare (considering the maximum number indicated by the MN) and, for each prepared PSCell, the candidate SN decides SCG SCells and provides the corresponding SCG radio resource configuration to the MN in an NR _RRCReconfiguration**_ message contained in the _SgNB Addition Request Acknowledge_ message. The candidate SN can either accept or reject each of the candidate cells listed within the measurement results indicated by the MN, i.e. it cannot configure any alternative candidates. In case of bearer options that require X2-U resources between the MN and the candidate SN, the candidate SN provides X2-U TNL address information for the respective E-RAB, X2-U UL TNL address information for SN terminated bearers, X2-U DL TNL address information for MN terminated bearers. For SN terminated bearers, the candidate SN provides the S1-U DL TNL address information for the respective E-RAB and security algorithm. If SCG radio resources have been requested, the SCG radio resource configuration is provided.
+
+NOTE 8: For the SN terminated split bearer option, the candidate SN may either decide to request resources from the MN of such an amount, that the QoS for the respective E-RAB is guaranteed by the exact sum of resources provided by the MN and the candidate SN together, or even more. The candidate SN decision is reflected in step 2 by the E-RAB parameters signalled to the MN, which may differ from E-RAB parameters received in step 1. The QoS level requested from the MN shall not exceed the level that the MN offered when setting up the split bearer in step 1.
+
+NOTE 9: In case of SN terminated bearers, early data forwarding may take place after step 2. For the early data forwarding of SN terminated bearers, the MN forwards the PDCP SDU to the candidate SN and also sends the _Early Status Transfer_ message. For the early transmission of MN terminated split/SCG bearers, the MN forwards the PDCP PDU to the candidate SN.
+
+3. The MN sends to the UE an _RRCConnectionReconfiguration_ message including the CPA configuration, i.e. a list of _RRCConnectionReconfiguration*_ messages and associated execution conditions. Each _RRCConnectionReconfiguration*_ message contains the SCG configuration in the _RRCReconfiguration**_ message received from the candidate SN in step 2 and possibly an MCG configuration. Besides, the _RRCConnectionReconfiguration_ message can also include an updated MCG configuration, e.g., to configure the required conditional measurements.
+
+4. The UE applies the _RRCConnectionReconfiguration_ message received in step 3, stores the CPA configuration and replies to the MN with an _RRCConnectionReconfigurationComplete_ message. In case the UE is unable to comply with (part of) the configuration included in the _RRCConnectionReconfiguration_ message, it performs the reconfiguration failure procedure.
+
+4a. The UE starts evaluating the execution conditions. If the execution condition of one candidate PSCell is satisfied, the UE applies _RRCConnectionReconfiguration*_ message corresponding to the selected candidate PSCell, and sends an _RRCConnectionReconfigurationComplete*_ message, including an NR _RRCReconfigurationComplete**_ message for the selected candidate PSCell, and information enabling the MN to identify the SN of the selected candidate PSCell.
+
+5a-5c. The MN informs the SN of the selected candidate PSCell that the UE has completed the reconfiguration procedure successfully via _SgNB Reconfiguration Complete_ message, including the _RRCReconfigurationComplete**_ message. The MN sends the _SgNB Release Request_ message(s) to cancel CPA in the other candidate SN(s), if configured. The other candidate SN(s) acknowledges the release request.
+
+6. The UE performs synchronisation towards the PSCell indicated in the _RRCConnectionReconfiguration*_ message applied in step 4a. The order the UE sends the _RRCConnectionReconfigurationComplete*_ message and performs the Random Access procedure towards the SCG is not defined. The successful RA procedure towards the SCG is not required for a successful completion of the RRC Connection Reconfiguration procedure.
+
+7. If PDCP termination point is changed to the SN for bearers using RLC AM, and when RRC full configuration is not used, the MN sends the _SN Status Transfer_ message.
+
+8. For SN terminated bearers moved from the MN, dependent on the bearer characteristics of the respective E-RAB, the MN may take actions to minimise service interruption due to activation of EN-DC (Data forwarding).
+
+9-12. If applicable, the update of the UP path towards the EPC is performed.
