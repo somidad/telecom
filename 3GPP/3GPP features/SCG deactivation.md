@@ -10,6 +10,20 @@ Proposed in Rel-17 Work Item [Further Multi-RAT Dual-Connectivity enhancements](
 - High NR UE power consumption
 - Consume power for NR only high data rate is required
 
+**SN release and add**
+
+- PDCP/SDAP termination point change -> data forwarding -> interruption
+
+**Bearer type change between MCG bearer <-> SCG/split bearer**
+
+- Requires RRC signaling for new cell group config
+
+**SCG deactivation and activation**
+
+- No PDCP/SDAP termination point change
+- No RRC signaling for cell group config update
+- Just toggles activation state of SCG
+
 ## Scopes
 
 - NR SCG only (EN-DC, NR-DC and NGEN-DC)
@@ -95,11 +109,19 @@ Proposed in Rel-17 Work Item [Further Multi-RAT Dual-Connectivity enhancements](
 
 - scg-DeactivationPreferenceConfig-r17 in OtherConfig
 - scg-DeactivationPreference-r17, uplinkData in UEAssistanceInformation
-- scg-State in RRCReconfiguration
-- scg-State in RRCResume
+- scg-State in RRCReconfiguration, RRCResune
 
 ### XnAP
 
 - SCG Activation Request, SCG Activation Status in S-NODE ADDITION REQUEST, REQUEST ACKNOWLEDGE
 - SCG Activation Request, SCG Activation Status in S-NODE MODIFICATION REQUEST, REQUEST ACKNOWLEDGE
 - SCG Activation Request in S-NODE MODIFICATION REQUIRED
+
+### E1AP
+
+- SCG Activation Status in BEARER CONTEXT SETUP REQUEST, BEARER CONTEXT MODIFICATION REQUEST
+
+### F1AP
+
+- SCG Activation Request, SCG Activation Status in UE CONTEXT SETUP REQUEST, UE CONTEXT MODIFICATION REQUEST
+- SCG Activation Request, SCG Activation Status in UE CONTEXT MODIFICATION REQUEST, UE CONTEXT MODIFICATION RESPONSE
