@@ -10,19 +10,12 @@ Proposed in Rel-17 Work Item [Further Multi-RAT Dual-Connectivity enhancements](
 - High NR UE power consumption
 - Consume power for NR only high data rate is required
 
-**SN release and add**
 
-- PDCP/SDAP termination point change -> data forwarding -> interruption
-
-**Bearer type change between MCG bearer <-> SCG/split bearer**
-
-- Requires RRC signaling for new cell group config
-
-**SCG deactivation and activation**
-
-- No PDCP/SDAP termination point change
-- No RRC signaling for cell group config update
-- Just toggles activation state of SCG
+| Operation      | Data forwarding | RRC for SCG  |
+| -------------- | --------------- | ------------ |
+| SN release/add | Involved        | Involved     |
+| MCG bearer     | Not involved    | Involved     |
+| SCG deact/act  | Not involved    | Not involved |
 
 ## Scopes
 
