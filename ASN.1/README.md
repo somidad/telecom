@@ -3,6 +3,9 @@
 
 ## Featured
 
+- [ASN.1 PER ALIGNED variant](./ASN.1%20PER%20ALIGNED%20variant/README.md)
+- [Backward compatible 3GPP RAN3 ASN.1 principles](Backward%20compatible%203GPP%20RAN3%20ASN.1%20principles.md)
+
 ## Specifications
 
 - [ITU-T X.680 (2021-02)](https://www.itu.int/rec/T-REC-X.680-202102-I/en) - Basic notation
