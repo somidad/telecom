@@ -1,4 +1,6 @@
 ---
+type: 3GPP Work Item
+release: 16
 acronym: LTE_NR_DC_CA_enh-Core
 ---
 

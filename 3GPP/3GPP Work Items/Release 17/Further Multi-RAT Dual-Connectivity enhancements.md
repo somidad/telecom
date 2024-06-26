@@ -1,4 +1,6 @@
 ---
+type: 3GPP Work Item
+release: 17
 acronym: LTE_NR_DC_enh2
 ---
 
