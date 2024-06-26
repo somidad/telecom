@@ -1,4 +1,6 @@
 ---
+type: 3GPP Work Item
+release: 18
 acronym: NR_Mob_enh2
 ---
 
