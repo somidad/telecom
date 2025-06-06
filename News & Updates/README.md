@@ -1,0 +1,2 @@
+- [Telecom News](../Telecom%20News.md)
+- [3GPP Mailing Lists](../3GPP%20Mailing%20Lists.md)
