@@ -1,0 +1,3 @@
+- [Google Dataset Search](https://datasetsearch.research.google.com/)
+- [Mendeley Data](https://data.mendeley.com/)
+- [Kaggle Datasets](https://www.kaggle.com/datasets)
