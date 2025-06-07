@@ -1,3 +1,4 @@
+- [6G White Papers](./6G%20White%20Papers.md)
 - [ITU-T IMT-2030 6G Vision and Requirements](./ITU-T%20IMT-2030%206G%20Vision%20and%20Requirements.md)
 - [3GPP 6G Workshop](./3GPP%206G%20Workshop.md)
 - [6G KPI Databases](./6G%20KPI%20Databases.md)

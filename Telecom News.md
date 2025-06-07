@@ -1,4 +1,0 @@
-- [Fierce Wireless](https://www.fierce-network.com/fierce-wireless-homepage)
-- [Light Reading](https://www.lightreading.com/)
-- [Opensignal](https://www.opensignal.com/)
-- [RCR Wireless](https://www.rcrwireless.com/)

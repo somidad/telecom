@@ -1,0 +1,2 @@
+- [Cheatsheets for Authentication and Key Agreements in 2G, 3G, 4G, and 5G - arXiv](https://arxiv.org/abs/2107.07416v1)
+- [SKT 유심 “재설정” 분석 – 무엇이 바뀌는가, 그리고 정말로 교체와 동일한가 – 깻잎의 삽질로그](https://blog.quendi.moe/2025/05/29/ko-skt-%EC%9C%A0%EC%8B%AC-%EC%9E%AC%EC%84%A4%EC%A0%95-%EB%B6%84%EC%84%9D-%EB%AC%B4%EC%97%87%EC%9D%B4-%EB%B0%94%EB%80%8C%EB%8A%94%EA%B0%80/)
